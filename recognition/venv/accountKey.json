@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "realtime-ticketing",
+  "private_key_id": "38fd800b377d7df6aaa9950241dea0d8f4730eef",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCoxoEW3Nab8psI\nlEh1oQQ2YNLsxkYZaM6swtR+nLUfkHpbtU/4OnDcH+nP1eHJj39yerAzbfIWQiKZ\nsVoYDEsX3NQ2mae2fn0EHA40A4qag9crDd0xnbzW26MrkqiwnUeKe6thQlSwD73U\nhd+Z1RxXIgjuPB8Vm+fUTVUmzRADEY+6yUnwENGHvj0L4swl265Ertw1zllpl9T/\n7pJ1RjEAmbGo3zJmYIj8U8mQDSYfj+VC+rtDPwYT+WgwB3hK33S+EC1HLShPdUg9\nYwtnIi3wGQqiQqE/0BFt+Pr0aRByUG66sz1PL//wVtZpHM9yisDtXHvzG2glHcal\nydGYyVpvAgMBAAECggEAALhJod5VARJ6s71ECqeZw3c2qLN7RCDhC/6pi6IKA3e4\nF3y2sVc4mxSN5mr5dYCQUf/Q5pUfiWsIy/JbpFnzNJRiWXh4T0KgltB/ja1gDm+6\nuUkFhRsfu2h6JznkUJJm5i6lygUk3/7Whsaqmp9vvsaY/OMlsbpeLRss73hutabE\ne6y8DD/4dIoyBBnKD8eCWhNsgG2v0QmPrTVIWfKDO8XGgavhfHG9zaiBiexKCssY\nDIpPuejrYjWmO0rz9OfLTEyWQWDJnzOFx/ZefQyK1AOXL4x3KKte7OCEKSe1YuId\njWETRIcaCZFL3IdDao0zrZS+tZB9+mUp1956wI+qsQKBgQDYT1x9OWTZpp5YwEfn\n6eGfycAEx55yShH7nDDNbzDa3UrogSZeS2YweTzzJqawiyKcIk7knECPIKV2q+Gs\nzQWgoxZ1Wc9h/7BvbMRKlCwAReegi8MgzPYCmLwGrr6CBgVDWb6cUFsNntRLXBXw\nY6XMSKOHAanOATs7rIZ813IL5wKBgQDHvlIBuQk5Shdid57FvGZ9nMd7b1uTjGcY\nfJEN1XyYuyQomdgBSwCXNwmnEXTmZK4WHbdBekKy2TpDUhjtoOFGIU7uPIOg1aaE\n6Od7sbhSJ3V9b8X7WWVEJoYvPwJIpUk+hixjsb+cC+hqfIT/tV9XkRpgqiGc3mXV\ny9kzE78sOQKBgQCFAN9E3EqHjezlc22DSwsBfkMEbV2etq6yAEr9tnXazaDmr6rQ\n5hmyiomQlN5/xT2FtY6/ANitaQx0mKFN6E6ihEUl6RAcGOT6zm0v0kXv8QvIaseT\nXpOR6yoKDd50ApGv5PnQEZS7HkM5BykyQ4NJxgxO0hX/5j/upFmZX7vvVwKBgFul\nsY7kzZyhqDUf2ZO0q/n6k3TJVWVPyIXtsch9KdwSEbcnT3rYZP7828ryMYb8rvuq\nysiaRjw1e4wkARgW9wXshoC891A2d18IVh3lH0Nio3/YZyi6jcJFQtAuwud+Hys2\n+OsNRXNd61fgpk2FdKeDBm1P4nhNesAr9g5/gvnRAoGBAJcCaajzI5nb66Gpi6sS\nxIpfvI034uh9tRuzgu3Mthrec9kweknapnun1cc8lxA9PuySQ9bYRsoWFL/OuV3m\nPPR2Whb2JB7cGE3aHeMoVG2P/m7pLPZtvk07bbIGdTlxdEc8qZpjkJCO+2Hn/fL4\n+H9Ait27L9eqd4UDfgijjbpd\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-ndubd@realtime-ticketing.iam.gserviceaccount.com",
+  "client_id": "107319115376498884748",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-ndubd%40realtime-ticketing.iam.gserviceaccount.com"
+}
