@@ -11,7 +11,7 @@ from firebase_admin import storage
 import numpy as np
 from datetime import datetime
 
-cred = credentials.Certificate("C:/Users/ak818/Desktop/New folder/recognition/venv/accountKey.json")
+cred = credentials.Certificate("recognition/venv/accountKey.json")
 firebase_admin.initialize_app(cred, {
     'databaseURL': "https://realtime-ticketing-default-rtdb.firebaseio.com/",
     'storageBucket': "realtime-ticketing.appspot.com"
@@ -23,11 +23,11 @@ cap = cv2.VideoCapture(0)
 cap.set(3, 640)
 cap.set(4, 480)
 
-imgBackground = cv2.imread('C:/Users/ak818/Desktop/New folder/recognition/Resources/ticket portal.png')
+imgBackground = cv2.imread('recognition/Resources/ticket portal.png')
 
 # Importing the mode images into a list
-folderModePath = r'C:\Users\ak818\Desktop\New folder\recognition\Resources\Modes'
-folderImagePath = r'C:\Users\ak818\Desktop\New folder\recognition\Images'
+folderModePath = 'recognition/Resources/Modes'
+folderImagePath = 'recognition/Images'
 modePathList = os.listdir(folderModePath)
 imgModeList = []
 for path in modePathList:

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import firebase from 'firebase/app';
-//import firebaseConfig from '../src/firebaseConfig'
+import firebaseConfig from '../src/firebaseConfig'
 import 'firebase/database';
 import { WebcamCapture } from "../src/Webcame";
-//import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 
 export const Register = (props) => {
     const [userData, setUserData] = useState({
@@ -105,9 +105,9 @@ export const Register = (props) => {
                     PhoneNo: "",
                     Gender: "",
                     registration: "2023",
-                    UniqueId: "",
+                    UniqueId: "78",
                     wallet: "2000",
-                    last_use_time: "march-23",
+                    last_use_time: "2022-12-11 00:54:34",
                 });
                 alert("Data Stored");
             } 

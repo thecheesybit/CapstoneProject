@@ -7,7 +7,7 @@ from firebase_admin import credentials
 from firebase_admin import db
 from firebase_admin import storage
  
-cred = credentials.Certificate("C:/Users/ak818/Desktop/New folder/recognition/venv/accountKey.json")
+cred = credentials.Certificate("recognition/venv/accountKey.json")
 firebase_admin.initialize_app(cred, {
     'databaseURL': "https://realtime-ticketing-default-rtdb.firebaseio.com/",
     'storageBucket': "realtime-ticketing.appspot.com"
@@ -15,7 +15,7 @@ firebase_admin.initialize_app(cred, {
  
  
 # Importing student images
-folderPath = r'C:\Users\ak818\Desktop\New folder\recognition\Images'
+folderPath = 'recognition/Images'
 
 pathList = os.listdir(folderPath)
 print(pathList)
