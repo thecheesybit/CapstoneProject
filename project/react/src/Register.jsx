@@ -4,7 +4,7 @@ import firebaseConfig from '../src/firebaseConfig'
 import 'firebase/database';
 import { WebcamCapture } from "../src/Webcame";
 import { v4 as uuidv4 } from 'uuid';
-let uid=''
+
 export const Register = (props) => {
     const [userData, setUserData] = useState({
         name: "",
@@ -15,6 +15,13 @@ export const Register = (props) => {
         wallet: "2000",
         last_use_time: "march-23",
     });
+    function generateRandomSixDigitNumber() {
+        const min = 100000; // minimum value
+        const max = 999999; // maximum value
+        return Math.floor(Math.random() * (max - min + 1) + min); // generates random number between min and max (inclusive)
+      }
+
+    const [uid,setUid]=useState(generateRandomSixDigitNumber())
 
     let name, value;
     const postUserData = (event) => {
@@ -56,12 +63,8 @@ export const Register = (props) => {
             // last_use_time
         ) {
 
-            function generateRandomSixDigitNumber() {
-                const min = 100000; // minimum value
-                const max = 999999; // maximum value
-                return Math.floor(Math.random() * (max - min + 1) + min); // generates random number between min and max (inclusive)
-              }
-            uid=generateRandomSixDigitNumber();
+       
+
             
          const res=  database.ref(`Students/${uid}`).set({
                 name,
@@ -143,7 +146,7 @@ export const Register = (props) => {
                 <label htmlFor="Phone no.">Phone Number</label>
                 <input type="text" placeholder="XXX-XXX-XXXX" name="PhoneNo" value={userData.PhoneNo} onChange={postUserData}/>
                 <label htmlFor="Image">Capture Image</label>
-                 <WebcamCapture />
+                 <WebcamCapture imgName={uid} />
             </form>
             <button className="link-btn" onClick={() => props.onFormSwitch("login")}>
                 Already have an account? Login here.
