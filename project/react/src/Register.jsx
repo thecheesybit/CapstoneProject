@@ -105,7 +105,7 @@ export const Register = (props) => {
                     PhoneNo: "",
                     Gender: "",
                     registration: "2023",
-                    UniqueId: "78",
+                    UniqueId: 78,
                     wallet: "2000",
                     last_use_time: "2022-12-11 00:54:34",
                 });
