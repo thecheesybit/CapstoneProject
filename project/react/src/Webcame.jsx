@@ -7,8 +7,8 @@ import firebase from 'firebase/app';
 // const WebcamComponent = () => <Webcam />;
 
 const videoConstraints = {
-    width: 220,
-    height: 200,
+    width: 216,
+    height: 216,
     facingMode: "user"
 };
 
@@ -68,10 +68,10 @@ export const WebcamCapture = (props) => {
 
                <Webcam
                     audio={false}
-                    height={200}
+                    height={216}
                     ref={webcamRef}
                     screenshotFormat="image/jpeg"
-                    width={220}
+                    width={216}
                     videoConstraints={videoConstraints}
                 /> 
             </div>
