@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import firebase from 'firebase/app';
-import firebaseConfig from '../src/firebaseConfig'
+//import firebaseConfig from '../src/firebaseConfig'
 import 'firebase/database';
 import { WebcamCapture } from "../src/Webcame";
-import { v4 as uuidv4 } from 'uuid';
+//import { v4 as uuidv4 } from 'uuid';
 
 export const Register = (props) => {
     const [userData, setUserData] = useState({
