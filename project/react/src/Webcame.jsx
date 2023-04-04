@@ -38,13 +38,6 @@ export const WebcamCapture = (props) => {
         contentType: 'image/png',
       };
 
-
-    //   fetch(imageSrc)
-    //     .then(res => res.blob())
-    //     .then(blob => {
-    //         newImageRef.putString(image.substring(23), 'base64')
-    //     })
-    //    const uploadTask = uploadBytesResumable(storageRef, file);
     const canvas = document.createElement('canvas');
     const img = new Image();
   
