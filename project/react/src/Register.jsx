@@ -11,9 +11,9 @@ export const Register = (props) => {
         PhoneNo: "",
         Gender: "",
         registration: "2023",
-        UniqueId: "",
+        UniqueId: 78,
         wallet: "2000",
-        last_use_time: "march-23",
+        last_use_time: "2022-12-11 00:54:34",
     });
     function generateRandomSixDigitNumber() {
         const min = 100000; // minimum value
