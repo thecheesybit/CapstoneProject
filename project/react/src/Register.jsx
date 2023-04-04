@@ -10,9 +10,9 @@ export const Register = (props) => {
         name: "",
         PhoneNo: "",
         Gender: "",
-        registration: "2023",
+        registration: 2023,
         UniqueId: 78,
-        wallet: "2000",
+        wallet: 2000,
         last_use_time: "2022-12-11 00:54:34",
     });
     function generateRandomSixDigitNumber() {
@@ -104,9 +104,9 @@ export const Register = (props) => {
                     name: "",
                     PhoneNo: "",
                     Gender: "",
-                    registration: "2023",
+                    registration: 2023,
                     UniqueId: 78,
-                    wallet: "2000",
+                    wallet: 2000,
                     last_use_time: "2022-12-11 00:54:34",
                 });
                 alert("Data Stored");
