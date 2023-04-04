@@ -91,7 +91,6 @@ export const WebcamCapture = (props) => {
                         
                 }
             </div>
-          
         </div>
     );
 };
