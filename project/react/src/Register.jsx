@@ -11,7 +11,7 @@ export const Register = (props) => {
         PhoneNo: "",
         Gender: "",
         registration: 2023,
-        UniqueId: 78,
+        UniqueId: 777,
         wallet: 2000,
         last_use_time: "2022-12-11 00:54:34",
     });
@@ -57,12 +57,9 @@ export const Register = (props) => {
             name &&
             PhoneNo &&
             Gender 
-   
+
         ) {
-
-       
-
-            
+   
          const res=  database.ref(`Students/${uid}`).set({
                 name,
                 PhoneNo,
@@ -73,20 +70,24 @@ export const Register = (props) => {
                 last_use_time,
               });
 
-         
-            if (res) {
+
+              if (res) {
                 setUserData({
                     name: "",
                     PhoneNo: "",
                     Gender: "",
-                    registration: 2023,
-                    UniqueId: 78,
-                    wallet: 2000,
-                    last_use_time: "2022-12-11 00:54:34",
+                    registration: "2023",
+                    UniqueId: "",
+                    wallet: "2000",
+                    last_use_time: "march-23",
                 });
                 alert("Data Stored");
             } 
-            
+            // else {
+        //         alert("plz fill the data");
+        //     }
+        // } else {
+        //     alert("plz fill the data");
          }
     };
 
@@ -104,7 +105,6 @@ export const Register = (props) => {
                     onChange={postUserData}
                 />
                 
-               
                 
                 <label htmlFor="Gender">Gender</label>
                 <input
@@ -117,12 +117,11 @@ export const Register = (props) => {
                 <label htmlFor="Phone no.">Phone Number</label>
                 <input type="text" placeholder="XXX-XXX-XXXX" name="PhoneNo" value={userData.PhoneNo} onChange={postUserData}/>
                 <label htmlFor="Image">Capture Image</label>
-                <br></br>
                  <WebcamCapture imgName={uid} />
             </form>
-            {/* <button className="link-btn" onClick={() => props.onFormSwitch("login")}>
+            <button className="link-btn" onClick={() => props.onFormSwitch("login")}>
                 Already have an account? Login here.
-            </button> */}
+            </button>
         </div>
     )
 };
