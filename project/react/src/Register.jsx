@@ -57,10 +57,7 @@ export const Register = (props) => {
             name &&
             PhoneNo &&
             Gender 
-            // registration &&
-            // UniqueId &&
-            // wallet &&
-            // last_use_time
+   
         ) {
 
        
@@ -76,29 +73,7 @@ export const Register = (props) => {
                 last_use_time,
               });
 
-            // const res = fetch(
-            //     // eslint-disable-next-line no-template-curly-in-string
-            //     "https://realtime-ticketing-default-rtdb.firebaseio.com/Students.json",
-            //     {
-            //         method: "POST",
-            //         headers: {
-            //             "Content-Type": "application/json",
-                
-            //         },
-            //         body: JSON.stringify({
-            //             uid:"helo",
-            //             name,
-            //             PhoneNo,
-            //             Gender,
-            //             registration,
-            //             UniqueId,
-            //             wallet,
-            //             last_use_time,
-                                
-            //         }),
-            //     }
-            // );
-
+         
             if (res) {
                 setUserData({
                     name: "",
@@ -111,11 +86,7 @@ export const Register = (props) => {
                 });
                 alert("Data Stored");
             } 
-            // else {
-        //         alert("plz fill the data");
-        //     }
-        // } else {
-        //     alert("plz fill the data");
+            
          }
     };
 
@@ -146,11 +117,12 @@ export const Register = (props) => {
                 <label htmlFor="Phone no.">Phone Number</label>
                 <input type="text" placeholder="XXX-XXX-XXXX" name="PhoneNo" value={userData.PhoneNo} onChange={postUserData}/>
                 <label htmlFor="Image">Capture Image</label>
+                <br></br>
                  <WebcamCapture imgName={uid} />
             </form>
-            <button className="link-btn" onClick={() => props.onFormSwitch("login")}>
+            {/* <button className="link-btn" onClick={() => props.onFormSwitch("login")}>
                 Already have an account? Login here.
-            </button>
+            </button> */}
         </div>
     )
 };

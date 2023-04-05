@@ -2,9 +2,6 @@ import React, { useState } from 'react';
 import Webcam from "react-webcam";
 import firebase from 'firebase/app';
 
-// import 'firebase/storage';
-//import storage from '../src/firebase';
-// const WebcamComponent = () => <Webcam />;
 
 const videoConstraints = {
     width: 216,
@@ -39,12 +36,6 @@ export const WebcamCapture = (props) => {
       };
 
 
-    //   fetch(imageSrc)
-    //     .then(res => res.blob())
-    //     .then(blob => {
-    //         newImageRef.putString(image.substring(23), 'base64')
-    //     })
-    //    const uploadTask = uploadBytesResumable(storageRef, file);
     const canvas = document.createElement('canvas');
     const img = new Image();
   
@@ -77,6 +68,7 @@ export const WebcamCapture = (props) => {
             </div>
             <div>
                 {image !== '' ?
+                
                     <button onClick={(e) => {
                         e.preventDefault();
                         setImage('')
