@@ -9,4 +9,4 @@ In the project directory, you can run:
 
 ### `pip install -r requirements.txt`
 
-Runs the app in Realtime-ticketing.bat after installation of dependencies
+To Run the app run -> Realtime-ticketing.bat after installation of dependencies.
