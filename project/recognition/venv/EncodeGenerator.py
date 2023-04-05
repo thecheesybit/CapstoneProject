@@ -33,7 +33,7 @@ def download_images_from_firebase(bucket_name, folder_path, local_folder_path, c
 
 download_images_from_firebase(
     bucket_name='realtime-ticketing.appspot.com',
-    folder_path='../Resources/Images/',
+    folder_path='Images/',
     local_folder_path='../Resources/Images/',
     cred_path='../venv/accountKey.json'
 )
