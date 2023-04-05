@@ -29,7 +29,7 @@ export const WebcamCapture = (props) => {
     // Store the image in Firebase Realtime Database
     console.log(storageRef)
     console.log(name1)
-    const newImageRef = storageRef.child(`/C:\\Users\\ak818\\Desktop\\New folder\\recognition\\Images//${name1}.png`);
+    const newImageRef = storageRef.child(`Images//${name1}.png`);
     
     var metadata = {
         contentType: 'image/png',
