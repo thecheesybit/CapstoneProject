@@ -4,17 +4,12 @@ import cv2
 import os
 import firebase_admin
 from firebase_admin import credentials
-from firebase_admin import db
-from firebase_admin import storage
-import os
-import firebase_admin
-from firebase_admin import credentials
 from firebase_admin import storage
 
 
 def download_images_from_firebase(bucket_name, folder_path, local_folder_path, cred_path):
     # Initialize Firebase app with service account credentials
-    cred = credentials.Certificate("C:/Users/ak818/Desktop/New folder/recognition/venv/accountKey.json")
+    cred = credentials.Certificate("../venv/accountKey.json")
     firebase_admin.initialize_app(cred, {
         'databaseURL': "https://realtime-ticketing-default-rtdb.firebaseio.com/",
         'storageBucket': "realtime-ticketing.appspot.com"
@@ -38,20 +33,14 @@ def download_images_from_firebase(bucket_name, folder_path, local_folder_path, c
 
 download_images_from_firebase(
     bucket_name='realtime-ticketing.appspot.com',
-    folder_path=r'C:\Users\ak818\Desktop\New folder\recognition\Images/',
-    local_folder_path=r'C:\Users\ak818\Desktop\New folder\recognition\Images/',
-    cred_path='C:/Users/ak818/Desktop/New folder/recognition/venv/accountKey.json'
+    folder_path='Images/',
+    local_folder_path='../Images/',
+    cred_path='../venv/accountKey.json'
 )
 
 
-# cred = credentials.Certificate("C:/Users/ak818/Desktop/New folder/recognition/venv/accountKey.json")
-# firebase_admin.initialize_app(cred, {
-#     'databaseURL': "https://realtime-ticketing-default-rtdb.firebaseio.com/",
-#     'storageBucket': "realtime-ticketing.appspot.com"
-# })
-
 # Importing student images
-folderPath = r'C:\Users\ak818\Desktop\New folder\recognition\Images'
+folderPath = '../Images'
 
 pathList = os.listdir(folderPath)
 print(pathList)
@@ -66,8 +55,7 @@ for path in pathList:
     blob = bucket.blob(fileName)
     blob.upload_from_filename(fileName)
 
-    # print(path)
-    # print(os.path.splitext(path)[0])
+
 print(studentIds)
 
 

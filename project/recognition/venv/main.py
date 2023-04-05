@@ -19,7 +19,7 @@ def open_py_file():
 
 open_py_file()
 
-cred = credentials.Certificate("C:/Users/ak818/Desktop/New folder/recognition/venv/accountKey.json")
+cred = credentials.Certificate("../venv/accountKey.json")
 firebase_admin.initialize_app(cred, {
     'databaseURL': "https://realtime-ticketing-default-rtdb.firebaseio.com/",
     'storageBucket': "realtime-ticketing.appspot.com"
@@ -31,16 +31,16 @@ cap = cv2.VideoCapture(0)
 cap.set(3, 640)
 cap.set(4, 480)
 
-imgBackground = cv2.imread('C:/Users/ak818/Desktop/New folder/recognition/Resources/ticket portal.png')
+imgBackground = cv2.imread('../Resources/ticket portal.png')
 
 # Importing the mode images into a list
-folderModePath = r'C:\Users\ak818\Desktop\New folder\recognition\Resources\Modes'
-folderImagePath = r'C:\Users\ak818\Desktop\New folder\recognition\Images'
+folderModePath = '../Resources/Modes'
+folderImagePath = '../Images'
 modePathList = os.listdir(folderModePath)
 imgModeList = []
 for path in modePathList:
     imgModeList.append(cv2.imread(os.path.join(folderModePath, path)))
-# print(len(imgModeList))
+
 
 # Load the encoding file
 print("Loading Encode File ...")

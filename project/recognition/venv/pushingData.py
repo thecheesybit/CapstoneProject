@@ -2,7 +2,7 @@ import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import db
 
-cred = credentials.Certificate("C:/Users/ak818/Desktop/New folder/recognition/venv/accountKey.json")
+cred = credentials.Certificate("..s/venv/accountKey.json")
 firebase_admin.initialize_app(cred, {
     'databaseURL': "https://realtime-ticketing-default-rtdb.firebaseio.com/"
 })
