@@ -9,14 +9,11 @@ from firebase_admin import db
 from firebase_admin import storage
 import numpy as np
 from datetime import datetime
-
 from subprocess import call
 
 
 def open_py_file():
     call(['python', 'EncodeGenerator.py'])
-
-
 open_py_file()
 
 cred = credentials.Certificate("../venv/accountKey.json")
@@ -35,7 +32,7 @@ imgBackground = cv2.imread('../Resources/ticket portal.png')
 
 # Importing the mode images into a list
 folderModePath = '../Resources/Modes'
-folderImagePath = '../Images'
+folderImagePath = '../Resources/Images'
 modePathList = os.listdir(folderModePath)
 imgModeList = []
 for path in modePathList:
@@ -53,6 +50,7 @@ print("Encode File Loaded")
 
 modeType = 0
 counter = 0
+time = 0
 id = -1
 imgStudent = []
 
@@ -124,7 +122,7 @@ while True:
 
                 imgBackground[44:44 + 633, 808:808 + 414] = imgModeList[modeType]
 
-                if counter <= 10:
+                if counter < 10:
                     cv2.putText(imgBackground, str(studentInfo['UniqueId']), (861, 125),
                                 cv2.FONT_HERSHEY_COMPLEX, 1, (255, 255, 255), 1)
                     cv2.putText(imgBackground, str(studentInfo['PhoneNo']), (1006, 550),
@@ -147,7 +145,7 @@ while True:
 
                 counter += 1
 
-                if counter >= 20:
+                if counter >= 30:
                     counter = 0
                     modeType = 0
                     studentInfo = []
