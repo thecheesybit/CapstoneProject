@@ -10,6 +10,15 @@ from firebase_admin import storage
 import numpy as np
 from datetime import datetime
 
+from subprocess import call
+
+
+def open_py_file():
+    call(['python', 'EncodeGenerator.py'])
+
+
+open_py_file()
+
 cred = credentials.Certificate("C:/Users/ak818/Desktop/New folder/recognition/venv/accountKey.json")
 firebase_admin.initialize_app(cred, {
     'databaseURL': "https://realtime-ticketing-default-rtdb.firebaseio.com/",
