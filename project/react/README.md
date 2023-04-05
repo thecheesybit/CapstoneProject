@@ -1,4 +1,4 @@
-# Elegant Login & Register Forms built in React
+# Elegant Register Forms for Realtime-Ticketing in React
 ![image](https://user-images.githubusercontent.com/55230372/230083176-3d0f5c52-7838-4ff4-a413-2c86500f6f0f.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
