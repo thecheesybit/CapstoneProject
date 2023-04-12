@@ -18,13 +18,14 @@ const database = firebase.database();
 
 const Dashboard = () => {
   const [records, setRecords] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState([]);
+  const [selectedUser, setSelectedUser] = useState(null);
 
   useEffect(() => {
     // Fetch records from Firebase Realtime Database
     const fetchRecords = async () => {
-      const response = await database.ref("/Students").once("value");
+      const response = await database.ref('/Students').once('value');
       const data = response.val();
       if (data) {
         setRecords(Object.values(data));
@@ -35,14 +36,18 @@ const Dashboard = () => {
 
   useEffect(() => {
     // Filter records based on search term
-    const filteredRecords = records.filter((record) =>
+    const filteredRecords = records.filter(record =>
       record.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
     setSearchResults(filteredRecords);
   }, [records, searchTerm]);
 
-  const handleSearch = (event) => {
+  const handleSearch = event => {
     setSearchTerm(event.target.value);
+  };
+
+  const handleSelectUser = user => {
+    setSelectedUser(user);
   };
 
   return (
@@ -50,21 +55,29 @@ const Dashboard = () => {
       <h1>Realtime-Ticketing Dashboard</h1>
       <input
         type="text"
-        placeholder="Search Name..."
-        value={searchTerm}
-        onChange={handleSearch}
-      />
-      <input
-        type="text"
-        placeholder="Enter Unique ID..."
+        placeholder="Search records..."
         value={searchTerm}
         onChange={handleSearch}
       />
       <ul>
-        {searchResults.map((record) => (
-          <li key={record.id}>{record.name}</li>
+        {searchResults.map(record => (
+          <li key={record.id} onClick={() => handleSelectUser(record)}>
+            {record.name}
+          </li>
         ))}
       </ul>
+      {selectedUser && (
+        <div>
+          <h2>User Details</h2>
+          <p>Name: {selectedUser.name}</p>
+          <p>Gender: {selectedUser.Gender}</p>
+          <p>PhoneNo: {selectedUser.PhoneNo}</p>
+          <p>Unique ID: {selectedUser.UniqueId}</p>
+          <p>Wallet: {selectedUser.wallet}</p>
+          <p>Registration: {selectedUser.registration}</p>
+          <p>Last time Used: {selectedUser.last_use_time}</p>
+        </div>
+      )}
     </div>
   );
 };
