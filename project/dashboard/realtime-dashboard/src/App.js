@@ -3,8 +3,12 @@ import './App.css';
 import Dashboard from './Dashboard';
 
 function App() {
-  return (
-    <Dashboard/>
+  return ( 
+  <div className="App">
+  {
+      <Dashboard/>
+  }
+</div>
   );
 }
 
