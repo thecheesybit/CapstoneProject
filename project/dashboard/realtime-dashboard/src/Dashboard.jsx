@@ -55,10 +55,17 @@ const Dashboard = () => {
       <h1>Realtime-Ticketing Dashboard</h1>
       <input
         type="text"
-        placeholder="Search records..."
+        placeholder="Enter Name"
         value={searchTerm}
         onChange={handleSearch}
       />
+      <input
+        type="text"
+        placeholder="Enter Uniqe ID"
+        value={searchTerm}
+        onChange={handleSearch}
+      />
+    
       <ul>
         {searchResults.map(record => (
           <li key={record.id} onClick={() => handleSelectUser(record)}>
