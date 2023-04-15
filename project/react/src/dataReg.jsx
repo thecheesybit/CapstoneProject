@@ -24,29 +24,29 @@ export const RegistrationForm = (props) => {
   const webcamRef = useRef(null);
   const [formData, setFormData] = useState({
     name: "",
-    phoneNumber: "",
-    gender: "",
+    PhoneNo: "",
+    Gender: "",
     zone: "",
     photo: null,
   });
   const [formErrors, setFormErrors] = useState({
     name: "",
-    phoneNumber: "",
-    gender: "",
+    PhoneNo: "",
+    Gender: "",
     zone: "",
     photo: "",
   });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const { name, gender, phoneNumber, zone, photo } = formData;
+    const { name, Gender, PhoneNo, zone, photo } = formData;
 
     // Perform form validation
     let errors = {
       name: "",
-      phoneNumber: "",
+      PhoneNo: "",
       zone: "",
-      gender: "",
+      Gender: "",
       photo: "",
     };
     let formIsValid = true;
@@ -56,20 +56,20 @@ export const RegistrationForm = (props) => {
       formIsValid = false;
     }
 
-    if (!phoneNumber) {
-      errors.phoneNumber = "Phone Number is required";
+    if (!PhoneNo) {
+      errors.PhoneNo = "Phone Number is required";
       formIsValid = false;
     } else {
       // Validate phone number using regular expression
       const phonePattern = /^[0-9]{10}$/;
-      if (!phonePattern.test(phoneNumber)) {
-        errors.phoneNumber = "Invalid Phone Number";
+      if (!phonePattern.test(PhoneNo)) {
+        errors.PhoneNo = "Invalid Phone Number";
         formIsValid = false;
       }
     }
 
-    if (!gender) {
-      errors.gender = "Gender is required";
+    if (!Gender) {
+      errors.Gender = "Gender is required";
       formIsValid = false;
     }
 
@@ -87,20 +87,20 @@ export const RegistrationForm = (props) => {
 
     if (formIsValid) {
       // Generate unique ID
-      const uniqueID = Math.floor(100000 + Math.random() * 900000);
+      const UniqueID = Math.floor(100000 + Math.random() * 900000);
       const now = moment().tz("Asia/Kolkata");
 
       // Store unique ID in Firebase Realtime Database
       firebase
         .database()
         .ref("registrations")
-        .child(uniqueID)
+        .child(UniqueID)
         .set({
           name,
-          gender,
-          phoneNumber,
+          Gender,
+          PhoneNo,
           zone,
-          uniqueID,
+          UniqueID,
           registration: new Date().getFullYear(),
           last_use_time: now.format("YYYY-MM-DD H:mm:ss"),
           wallet: 2000,
@@ -109,7 +109,7 @@ export const RegistrationForm = (props) => {
           // Upload photo to Firebase Storage
           const storageRef = firebase.storage().ref();
           const zoneRef = storageRef.child(`zone${zone}`);
-          const photoRef = zoneRef.child(`${uniqueID}.jpeg`);
+          const photoRef = zoneRef.child(`${UniqueID}.jpeg`);
           const photoBlob = dataURLtoBlob(photo);
           return photoRef.put(photoBlob);
         })
@@ -179,8 +179,8 @@ export const RegistrationForm = (props) => {
         <label>
           Gender:
           <select
-            name="gender"
-            value={formData.gender}
+            name="Gender"
+            value={formData.Gender}
             onChange={handleInputChange}
           >
             <option value="">Select Gender</option>
@@ -189,16 +189,16 @@ export const RegistrationForm = (props) => {
             <option value="other">Other</option>
           </select>
         </label>
-        {formErrors.gender && <p>{formErrors.gender}</p>}
+        {formErrors.Gender && <p>{formErrors.Gender}</p>}
         <br />
         <label htmlFor="Phone no.">Phone Number</label>
         <input
           type="text"
-          name="phoneNumber"
-          value={formData.phoneNumber}
+          name="PhoneNo"
+          value={formData.PhoneNo}
           onChange={handleInputChange}
         />
-        {formErrors.phoneNumber && <p>{formErrors.phoneNumber}</p>}
+        {formErrors.PhoneNo && <p>{formErrors.PhoneNo}</p>}
         <br />
         <label>
           Zone:
