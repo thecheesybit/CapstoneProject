@@ -109,7 +109,7 @@ export const RegistrationForm = (props) => {
           // Upload photo to Firebase Storage
           const storageRef = firebase.storage().ref();
           const zoneRef = storageRef.child(`zone${zone}`);
-          const photoRef = zoneRef.child(`${UniqueId}.jpeg`);
+          const photoRef = zoneRef.child(`${UniqueId}.png`);
           const photoBlob = dataURLtoBlob(photo);
           return photoRef.put(photoBlob);
         })
@@ -219,7 +219,7 @@ export const RegistrationForm = (props) => {
         <Webcam
           audio={false}
           ref={webcamRef}
-          screenshotFormat="image/jpeg"
+          screenshotFormat="image/png"
           videoConstraints={{ width: 216, height: 216 }}
         />
         {formData.photo ? (
