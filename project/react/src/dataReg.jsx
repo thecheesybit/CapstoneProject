@@ -87,20 +87,20 @@ export const RegistrationForm = (props) => {
 
     if (formIsValid) {
       // Generate unique ID
-      const UniqueID = Math.floor(100000 + Math.random() * 900000);
+      const UniqueId = Math.floor(100000 + Math.random() * 900000);
       const now = moment().tz("Asia/Kolkata");
 
       // Store unique ID in Firebase Realtime Database
       firebase
         .database()
         .ref("registrations")
-        .child(UniqueID)
+        .child(UniqueId)
         .set({
           name,
           Gender,
           PhoneNo,
           zone,
-          UniqueID,
+          UniqueId,
           registration: new Date().getFullYear(),
           last_use_time: now.format("YYYY-MM-DD H:mm:ss"),
           wallet: 2000,
@@ -109,7 +109,7 @@ export const RegistrationForm = (props) => {
           // Upload photo to Firebase Storage
           const storageRef = firebase.storage().ref();
           const zoneRef = storageRef.child(`zone${zone}`);
-          const photoRef = zoneRef.child(`${UniqueID}.jpeg`);
+          const photoRef = zoneRef.child(`${UniqueId}.jpeg`);
           const photoBlob = dataURLtoBlob(photo);
           return photoRef.put(photoBlob);
         })
