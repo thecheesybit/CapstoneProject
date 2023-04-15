@@ -92,7 +92,7 @@ const handleSearch = () => {
           <p>Name: {userDetails.name}</p>
           <p>Gender: {userDetails.Gender}</p>
           <p>PhoneNo: {userDetails.PhoneNo}</p>
-          <p>Unique ID: {userDetails.UniqueID}</p>
+          <p>Unique ID: {userDetails.UniqueId}</p>
           <p>Wallet: {userDetails.wallet}</p>
           <p>Registration: {userDetails.registration}</p>
           <p>Last time Used: {userDetails.last_use_time}</p>
