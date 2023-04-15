@@ -48,3 +48,12 @@ button {
   color: white;
   text-decoration: underline;
 }
+
+.logo-container {
+  text-align: center; /* Center the logo */
+}
+
+.logo {
+  max-width: 800px; /* Set max width of logo */
+  margin-bottom: auto; /* Add margin at the bottom for spacing */
+}
