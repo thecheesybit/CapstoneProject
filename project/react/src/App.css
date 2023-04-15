@@ -11,6 +11,10 @@
 .auth-form-container, .login-form, .register-form {
   display: flex;
   flex-direction: column;
+  margin: 0 auto; /* Center horizontally */
+  max-width: 800px; /* Set max width of form container */
+  padding: 20px; /* Add padding for spacing */
+  text-align: center;
 }
 
 @media screen and (min-width: 600px) {
@@ -47,4 +51,13 @@ button {
   background: none;
   color: white;
   text-decoration: underline;
+}
+
+.logo-container {
+  text-align: center; /* Center the logo */
+}
+
+.logo {
+  max-width: 800px; /* Set max width of logo */
+  margin-bottom: auto; /* Add margin at the bottom for spacing */
 }
