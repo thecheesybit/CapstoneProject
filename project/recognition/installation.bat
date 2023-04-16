@@ -9,18 +9,18 @@ echo.
 echo.
 echo Select menu
 echo ================
-echo 1. Display python modules being installed using pip function
-echo 2. Pip installation (individual files)
-echo 3. Pip uninstall
+echo 1. Install/Upgrade pip
+echo 2. Installing realtime-ticketing dependecies
+echo 3. Display python modules being installed using pip function
 echo.
  
 REM set the python version here
 set python_ver=27
  
 set /p x=Pick:
-IF '%x%' == '1' GOTO NUM_1
+IF '%x%' == '1' GOTO NUM_3
 IF '%x%' == '2' GOTO NUM_2
-IF '%x%' == '3' GOTO NUM_3
+IF '%x%' == '3' GOTO NUM_1
 GOTO start
  
 :NUM_1
@@ -33,19 +33,14 @@ exit
 :NUM_2
 echo  Installing realtime-ticketing dependecies for you... 
 
-pip install requirements.txt
+pip install --upgrade -r requirements.txt
  
 pause
 exit
  
 :NUM_3
-echo  Enter a filename to UNINSTALL using pip
-set INPUT=
-set /P INPUT=Type input:%=%
- 
-cd \
-cd \python%python_ver%\Scripts\
-pip uninstall %INPUT%
+echo  INSTALLing pip
+python -m pip install -U pip
  
 pause
 exit
