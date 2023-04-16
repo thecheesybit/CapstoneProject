@@ -5,6 +5,8 @@ import os
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import storage
+from firebase_admin import db
+
 
 
 def download_images_from_firebase(bucket_name, folder_path, local_folder_path, cred_path):
@@ -31,16 +33,18 @@ def download_images_from_firebase(bucket_name, folder_path, local_folder_path, c
             print(f'Downloaded {blob.name} to {local_path}')
 
 
+
+
 download_images_from_firebase(
     bucket_name='realtime-ticketing.appspot.com',
-    folder_path='Images/',
-    local_folder_path='../Resources/Images/',
+    folder_path='zone1/',
+    local_folder_path='zone1/',
     cred_path='../venv/accountKey.json'
 )
 
 
 # Importing student images
-folderPath = '../Resources/Images'
+folderPath = 'zone1'
 
 pathList = os.listdir(folderPath)
 print(pathList)
